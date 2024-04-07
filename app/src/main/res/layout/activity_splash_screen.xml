@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:fontFamily="@font/montserrat"
-        android:text="Order Food"
+        android:text="Easy Taste"
         android:textColor="@color/orange"
         android:textSize="40sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView2"
@@ -36,11 +36,11 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="36dp"
         android:fontFamily="@font/poppins_light"
         android:text="Deliver Favourite Food"
         app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
