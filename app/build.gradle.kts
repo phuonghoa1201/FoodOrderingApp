@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.backend.wasm.ir2wasm.bind
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -36,6 +38,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = "1.8"
+    }
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
     }
 }
 
