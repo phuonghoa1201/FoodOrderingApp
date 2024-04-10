@@ -5,4 +5,6 @@
     <color name="orange">#FF4B4B</color>
     <color name="grey">#30384F</color>
     <color name="transparent_color">#00FFFFFF</color>
+    <color name="iconColor">#FEAD10</color>
+    <color name="buttonColor">#FF4B4B</color>
 </resources>
