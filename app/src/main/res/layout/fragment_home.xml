@@ -42,11 +42,13 @@
         app:layout_constraintTop_toBottomOf="@id/textView9" />
 
     <!-- TextView "Popular" -->
+
+    <!-- TextView "View" -->
     <TextView
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/montserrat"
@@ -55,7 +57,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardView2" />
 
-    <!-- TextView "View" -->
     <TextView
         android:id="@+id/textView10"
         android:layout_width="wrap_content"
