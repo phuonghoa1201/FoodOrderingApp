@@ -62,7 +62,7 @@ class HomeFragment : Fragment() {
         val foodName = listOf("Pho Bo Ha Noi", "Sushi", "Basic dishes", "Pizza")
         val price = listOf("20.22$", "15.67$", "30.00$", "21.31$")
         val popularFoodImages = listOf(R.drawable.pho, R.drawable.sushi, R.drawable.set_vnese_food, R.drawable.menu_home_4)
-        val adapter = PopularAdapter(foodName, price, popularFoodImages)
+        val adapter = PopularAdapter(foodName, price, popularFoodImages,requireContext())
 
         // Setup RecyclerView
         binding.popularRecyclerView.layoutManager = LinearLayoutManager(requireContext())
