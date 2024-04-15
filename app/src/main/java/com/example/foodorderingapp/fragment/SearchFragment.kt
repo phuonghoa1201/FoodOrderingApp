@@ -43,7 +43,7 @@ class SearchFragment : Fragment() {
 //            originMenuFoodName as MutableList<String>, originMenuPrice as MutableList<String>,
 //            originMenuFoodImage as MutableList<Int>
 //        )
-        adapter = MenuAdapter(filteredMenuFoodName,filteredMenuPrice,filteredMenuFoodImage)
+        adapter = MenuAdapter(filteredMenuFoodName,filteredMenuPrice,filteredMenuFoodImage,requireContext())
         binding.menuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.menuRecyclerView.adapter = adapter
         // set up for search View

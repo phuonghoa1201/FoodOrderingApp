@@ -41,7 +41,7 @@ class MenuBottomSheetFragment : BottomSheetDialogFragment() {
         val adapter = MenuAdapter(
             ArrayList(menuFoodName),
             ArrayList(menuPrice),
-            ArrayList(menuFoodImages)
+            ArrayList(menuFoodImages),requireContext()
         )
 
 //        val gridLayoutManager = GridLayoutManager(requireContext(), 2)
