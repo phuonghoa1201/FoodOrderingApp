@@ -44,23 +44,23 @@
 
         <TextView
             android:id="@+id/foodNamePopular"
-            android:textStyle="bold"
-            android:text="Pho bo Hanoi"
-            android:textSize="16dp"
-            android:padding="5dp"
-            android:textColor="@color/black"
-            android:fontFamily="@font/poppins_light"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/imageView5"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"/>
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat"
+            android:padding="5dp"
+            android:text="Pho bo Hanoi"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView5" />
 
         <TextView
             android:id="@+id/addtocart"
             android:layout_width="30dp"
-            android:layout_height="28dp"
+            android:layout_height="30dp"
             android:layout_marginTop="18dp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="16dp"

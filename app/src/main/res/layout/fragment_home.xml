@@ -70,6 +70,7 @@
         android:paddingRight="16dp"
         android:text="View menu"
         android:textColor="@color/white"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/cardView2" />
 

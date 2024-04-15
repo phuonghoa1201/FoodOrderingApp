@@ -6,8 +6,6 @@
         android:endColor="@color/orange" />
     <corners android:radius="100dp" />
     <!-- Thêm một viền màu trắng -->
-    <stroke
-        android:width="2dp"
-        android:color="@color/orange" />
+
 
 </shape>

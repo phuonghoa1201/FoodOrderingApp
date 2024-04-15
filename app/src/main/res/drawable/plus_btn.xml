@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<vector
+    android:height="1000dp"
+    android:viewportHeight="59"
+    android:viewportWidth="59"
+    android:width="1000dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-</selector>
+    <!-- Hình tròn -->
+    <path
+        android:pathData="M4.5,29.5
+        a 25,25 0 1,0 50,0
+        a 25,25 0 1,0 -50,0
+        "
+        android:fillColor="@color/orange"
+        android:strokeWidth="4"/>
+
+    <!-- Dấu cộng -->
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M20,29.5L39,29.5M29.5,20L29.5,39"
+        android:strokeColor="@color/white"
+        android:strokeLineCap="round"
+        android:strokeWidth="3"/> <!-- Giảm độ dày của dấu cộng -->
+
+</vector>
