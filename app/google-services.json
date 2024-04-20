@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "838442733090",
+    "firebase_url": "https://foodorderingapp-ae164-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "foodorderingapp-ae164",
+    "storage_bucket": "foodorderingapp-ae164.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838442733090:android:b3c92d4740343f2585447b",
+        "android_client_info": {
+          "package_name": "com.example.adminfoodorderingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY78jWrASTZ13tDw1UaG0gWn8r9ib5c6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838442733090:android:7df4060207e9e11f85447b",
+        "android_client_info": {
+          "package_name": "com.example.foodorderingapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY78jWrASTZ13tDw1UaG0gWn8r9ib5c6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
