@@ -24,8 +24,8 @@
 
             <ImageView
                 android:id="@+id/cartImg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
@@ -62,40 +62,35 @@
                 android:id="@+id/minusBtn"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginStart="144dp"
+                android:layout_marginStart="32dp"
                 android:background="@drawable/icon_minus"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/cartImg"
-                app:layout_constraintTop_toTopOf="@+id/quantity"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintStart_toEndOf="@+id/cardItemPrice"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/plusBtn"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
                 android:background="@drawable/icon_plus"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/minusBtn"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.74" />
+                app:layout_constraintHorizontal_bias="0.466"
+                app:layout_constraintStart_toEndOf="@+id/quantityTv"
+                app:layout_constraintTop_toBottomOf="@id/deleteBtn" />
 
             <TextView
-                android:id="@+id/quantity"
+                android:id="@+id/quantityTv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginEnd="14dp"
+                android:layout_marginStart="32dp"
                 android:fontFamily="@font/montserrat"
                 android:text="01"
-                app:layout_constraintBottom_toBottomOf="@+id/plusBtn"
-                app:layout_constraintEnd_toStartOf="@+id/plusBtn"
-                app:layout_constraintHorizontal_bias="0.25"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/minusBtn"
-                app:layout_constraintTop_toTopOf="@+id/plusBtn"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageButton
                 android:id="@+id/deleteBtn"
@@ -103,7 +98,6 @@
                 android:layout_height="24dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/delete"
-                app:layout_constraintBottom_toTopOf="@+id/plusBtn"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.307" />

@@ -96,7 +96,7 @@ Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Ma
 
     <androidx.appcompat.widget.AppCompatButton
         android:background="@drawable/addtocartshape"
-        android:id="@+id/btnAddToCart"
+        android:id="@+id/addItemBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Add to Cart"
