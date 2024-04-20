@@ -4,6 +4,6 @@
     <string name="login_text">Do not have an account ? <font color="FF4B4B"><b>Sign Up</b></font></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-
+    <string name="sign_up_text">Have an account ? <font color="FF4B4B"><b>Sign In</b></font></string>
 
 </resources>
