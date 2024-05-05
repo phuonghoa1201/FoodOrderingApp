@@ -9,7 +9,6 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.foodorderingapp.databinding.CartItemBinding
-import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -56,6 +55,13 @@ class CartAdapter(
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         holder.bind(position)
     }
+//    get updated quantity
+     fun getUpdatedItemsQuantities(): MutableList<Int> {
+        val itemQuantity = mutableListOf<Int>()
+        itemQuantity.addAll(cartQuantity)
+        return itemQuantity
+    }
+
 
     inner class CartViewHolder(private val binding: CartItemBinding) :
         RecyclerView.ViewHolder(binding.root) {

@@ -8,11 +8,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.foodorderingapp.CongratsBottomSheet
 import com.example.foodorderingapp.PayoutActivity
 import com.example.foodorderingapp.adapter.CartAdapter
-
-import com.example.foodorderingapp.R
 import com.example.foodorderingapp.databinding.FragmentCartBinding
 import com.example.foodorderingapp.model.CartItem
 import com.google.firebase.auth.FirebaseAuth
@@ -66,14 +63,66 @@ class CartFragment : Fragment() {
 //        binding.cartRecyclerView.adapter = adapter
 
         binding.proceedBtn.setOnClickListener {
-            val intent = Intent(requireContext(), PayoutActivity::class.java)
-            startActivity(intent)
+//           get order item before check out
+            getOrderItemsDetail()
+//            val intent = Intent(requireContext(), PayoutActivity::class.java)
+//            startActivity(intent)
         }
 //        binding.proceedBtn.setOnClickListener {
 //            val bottomSheetDialog = CongratsBottomSheet()
 //            bottomSheetDialog.show(parentFragmentManager,"Test")
 //        }
         return binding.root
+    }
+
+    private fun getOrderItemsDetail() {
+
+        val orderIdReference: DatabaseReference = database.reference.child("user").child(userId).child("CartItems")
+
+        val foodName = mutableListOf<String>()
+        val foodPrice = mutableListOf<String>()
+        val foodImage = mutableListOf<String>()
+        val foodDescription = mutableListOf<String>()
+        val foodIngredient = mutableListOf<String>()
+//        get items quantities
+        val foodQuantities = cartAdapter.getUpdatedItemsQuantities()
+
+        orderIdReference.addListenerForSingleValueEvent(object: ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot) {
+                for (foodSnapshot in snapshot.children) {
+                    // Lấy các mục giỏ hàng và thêm vào danh sách tương ứng
+                    val orderItem = foodSnapshot.getValue(CartItem::class.java)
+                    // Kiểm tra xem orderItem có null hay không trước khi thêm vào danh sách
+                    orderItem?.foodName?.let { foodName.add(it) }
+                    orderItem?.foodPrice?.let { foodPrice.add(it) }
+                    orderItem?.foodDescription?.let { foodDescription.add(it) }
+                    orderItem?.foodImage?.let { foodImage.add(it) }
+                    orderItem?.foodIngredient?.let { foodIngredient.add(it) }
+                }
+                orderNow(foodName, foodPrice, foodDescription, foodImage,foodIngredient, foodQuantities )
+            }
+
+
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(requireContext(), "Order making failed. Please Try Again", Toast.LENGTH_SHORT).show()
+            }
+
+        } )
+
+    }
+
+    private fun orderNow(foodName: MutableList<String>, foodPrice: MutableList<String>, foodDescription: MutableList<String>, foodImage: MutableList<String>, foodIngredient: MutableList<String>, foodQuantities: MutableList<Int>) {
+        if(isAdded && context!=null){
+            val intent = Intent(requireContext(), PayoutActivity::class.java)
+            intent.putExtra("FoodItemName", foodName as ArrayList<String>)
+            intent.putExtra("FoodItemPrice", foodPrice as ArrayList<String>)
+            intent.putExtra("FoodItemImage", foodImage as ArrayList<String>)
+            intent.putExtra("FoodItemDescription", foodDescription as ArrayList<String>)
+            intent.putExtra("FoodItemIngredient", foodIngredient as ArrayList<String>)
+            intent.putExtra("FoodItemQuantities", foodQuantities as ArrayList<Int>)
+            startActivity(intent)
+
+        }
     }
 
     private fun retrieveCartItems() {
@@ -105,9 +154,9 @@ class CartFragment : Fragment() {
                 setAdapter()
             }
             private fun setAdapter() {
-                val adapter = CartAdapter(requireContext(),foodNames,foodPrices,foodImageUri,foodDescriptions,quantity,foodIngredients)
-                binding.cartRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-                binding.cartRecyclerView.adapter = adapter
+                cartAdapter = CartAdapter(requireContext(),foodNames,foodPrices,foodImageUri,foodDescriptions,quantity,foodIngredients)
+                binding.cartRecyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+                binding.cartRecyclerView.adapter = cartAdapter
             }
 
 
