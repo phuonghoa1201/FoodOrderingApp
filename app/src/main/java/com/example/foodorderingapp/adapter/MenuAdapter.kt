@@ -14,10 +14,7 @@ import com.example.foodorderingapp.model.MenuItem
 
 
 class MenuAdapter(
-//    private val menuItems:MutableList<String>,
-//    private val menuItemPrice:MutableList<String>,
-//    private val menuItemImage:MutableList<Int>,
-    private val menuItems:List<MenuItem>,
+    private var menuItems:List<MenuItem>,
     private val requiredContext : Context
 ) : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 
@@ -78,6 +75,12 @@ class MenuAdapter(
 
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
         holder.bind(position)
+    }
+
+    fun updateData(filteredMenuItems: MutableList<MenuItem>) {
+        menuItems = filteredMenuItems
+        notifyDataSetChanged()
+
     }
 //    interface OnClickListener{
 //        fun onItemClick(position: Int){}

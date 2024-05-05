@@ -25,6 +25,8 @@ class CartAdapter(
     private var cartDescriptions: MutableList<String>,
     private val cartQuantity: MutableList<Int>,
     private val cartIngredients: MutableList<String>
+
+
 ) : RecyclerView.Adapter<CartAdapter.CartViewHolder>() {
     //    initialize firebase
     private val auth = FirebaseAuth.getInstance()
@@ -56,15 +58,21 @@ class CartAdapter(
     override fun onBindViewHolder(holder: CartViewHolder, position: Int) {
         holder.bind(position)
     }
+// get updated quantity
+    fun getUpdatedItemsQuantities(): MutableList<Int> {
+        val itemQuantity = mutableListOf<Int>()
+        itemQuantity.addAll(cartQuantity)
+        return itemQuantity
+
+    }
 
     inner class CartViewHolder(private val binding: CartItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(position: Int) {
             binding.apply {
-                val quantity = itemQuantities[position]
                 cartFoodName.text = cartItems[position]
                 cardItemPrice.text = cartItemPrices[position]
-                quantityTv.text = quantity.toString()
+                quantityTv.text = itemQuantities[position].toString()
 //                Load Image Using Glide
                 val uriString = cartImages[position]
                 val uri = Uri.parse(uriString)
@@ -127,10 +135,10 @@ class CartAdapter(
                     notifyItemRemoved(position)
                     notifyItemRangeChanged(position, cartItems.size)
                     Toast.makeText(context, "Deleted successfully", Toast.LENGTH_SHORT).show()
-                    Log.d("delete","Deleted successfully")
+                    Log.d("delete", "Deleted successfully")
                 }.addOnFailureListener {
                     Toast.makeText(context, "Failed to Delete", Toast.LENGTH_SHORT).show()
-                    Log.d("delete","Failed to Delete")
+                    Log.d("delete", "Failed to Delete")
                 }
             }
         }

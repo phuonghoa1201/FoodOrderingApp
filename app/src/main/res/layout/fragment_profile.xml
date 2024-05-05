@@ -36,7 +36,7 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/editTextName"
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -46,7 +46,6 @@
                 android:ems="10"
                 android:fontFamily="@font/poppins"
                 android:inputType="text"
-                android:text="EzTaste"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -72,7 +71,7 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/editTextAddress"
+                android:id="@+id/address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -82,7 +81,6 @@
                 android:ems="10"
                 android:fontFamily="@font/poppins"
                 android:inputType="textMultiLine"
-                android:text="123 Tran Dai Nghia, Da Nang"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -108,7 +106,7 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/editTextEmail"
+                android:id="@+id/email"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -118,7 +116,6 @@
                 android:ems="10"
                 android:fontFamily="@font/poppins"
                 android:inputType="textEmailAddress"
-                android:text="tasteez@gmail.com"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -145,7 +142,7 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -155,13 +152,12 @@
                 android:ems="10"
                 android:fontFamily="@font/poppins"
                 android:inputType="phone"
-                android:text="06845734"
                 android:textSize="16sp" />
         </LinearLayout>
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonSubmit"
+        android:id="@+id/saveInforBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"

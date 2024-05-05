@@ -9,12 +9,11 @@
     android:background="@color/white"
     tools:context=".PayoutActivity">
     <ImageButton
-        android:id="@+id/button"
+        android:id="@+id/backBtn"
         android:src="@drawable/icon_exit"
         android:layout_width="32sp"
         android:layout_height="32sp"
         android:background="@color/transparent_color"
-        android:text="Button"
  />
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,13 +55,14 @@
                 android:text="Name" />
 
             <EditText
+                android:id="@+id/nameEdt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/transparent_color"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Name" />
+                 />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="16dp"
@@ -86,13 +86,14 @@
                 android:text="Address" />
 
             <EditText
+                android:id="@+id/addressEdt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/transparent_color"
                 android:ems="10"
                 android:inputType="textMultiLine"
-                android:text="Number of the house, name of the road, and name of the town " />
+                 />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="16dp"
@@ -116,13 +117,14 @@
                 android:text="Phone" />
 
             <EditText
+                android:id="@+id/phoneEdt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@color/transparent_color"
                 android:ems="10"
                 android:inputType="text"
-                android:text="12345678" />
+                 />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="16dp"
@@ -173,7 +175,7 @@
                 android:text="Total amount" />
 
             <EditText
-                android:id="@+id/editTextText2"
+                android:id="@+id/totalAmount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -183,7 +185,7 @@
                 android:ems="10"
                 android:inputType="none"
                 android:textColor="@color/orange"
-                android:text="$10" />
+                />
         </LinearLayout>
 
     </LinearLayout>
