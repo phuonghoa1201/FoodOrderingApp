@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.foodorderingapp.databinding.ActivityPayoutBinding
+
 import com.example.foodorderingapp.model.OrderDetails
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -30,20 +30,23 @@ class PayoutActivity : AppCompatActivity() {
     private lateinit var foodQuantities:ArrayList<Int>
     private lateinit var databaseReference: DatabaseReference
     private lateinit var userId : String
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPayoutBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        Initialize firebase and User details
+
+//        Initialize Firebase and User details
         auth = FirebaseAuth.getInstance()
-        databaseReference = FirebaseDatabase.getInstance().reference
+        databaseReference = FirebaseDatabase.getInstance().getReference()
 //        set user data
         setUserData()
         binding.placeMyOrderBtn.setOnClickListener {
 //            get data from textView
-            name = binding.nameEdt.text.toString().trim()
-            address = binding.addressEdt.text.toString().trim()
-            phone = binding.phoneEdt.text.toString().trim()
+            name = binding.name.text.toString().trim()
+            address = binding.address.text.toString().trim()
+            phone = binding.phone.text.toString().trim()
             if(name.isBlank()&&address.isBlank()&&phone.isBlank()){
                 Toast.makeText(this,"Please enter all the information",Toast.LENGTH_SHORT).show()
             }else{
@@ -86,6 +89,7 @@ class PayoutActivity : AppCompatActivity() {
         }
     }
 
+
     private fun addOrderToHistory(orderDetails: OrderDetails) {
         databaseReference.child("user").child(userId).child("BuyHistory").child(orderDetails.itemPushKey!!).setValue(orderDetails).addOnSuccessListener {
 
@@ -123,21 +127,25 @@ class PayoutActivity : AppCompatActivity() {
             val userReference = databaseReference.child("user").child(userId)
             userReference.addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    val names: String  = snapshot.child("name").getValue(String::class.java)?:"" // tra ve "" neu null
-                    val addresses: String  = snapshot.child("address").getValue(String::class.java)?:""
-                    val phones: String  = snapshot.child("phone").getValue(String::class.java)?:""
+                    val names: String = snapshot.child("name").getValue(String::class.java)
+                        ?: "" // tra ve "" neu null
+                    val addresses: String =
+                        snapshot.child("address").getValue(String::class.java) ?: ""
+                    val phones: String = snapshot.child("phone").getValue(String::class.java) ?: ""
                     binding.apply {
-                        nameEdt.setText(names)
-                        addressEdt.setText(addresses)
-                        phoneEdt.setText(phones)
+                        name.setText(names)
+                        address.setText(addresses)
+                        phone.setText(phones)
                     }
                 }
 
                 override fun onCancelled(error: DatabaseError) {
 
                 }
+
             })
         }
 
     }
 }
+

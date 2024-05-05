@@ -95,15 +95,18 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.328" />
 
-                <TextView
-                    android:id="@+id/inprogress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/receivedBtn"
+                    android:layout_width="80dp"
+                    android:layout_height="30dp"
                     android:layout_marginTop="12dp"
+                    android:background="@drawable/orange_button"
                     android:fontFamily="@font/poppins"
-                    android:text="In Progress"
+                    android:text="Received"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.908"
+                    app:layout_constraintHorizontal_bias="0.868"
                     app:layout_constraintStart_toEndOf="@+id/buyAgainFoodPrice"
                     app:layout_constraintTop_toBottomOf="@+id/cardView4" />
             </androidx.constraintlayout.widget.ConstraintLayout>

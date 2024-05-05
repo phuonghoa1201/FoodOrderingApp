@@ -55,7 +55,7 @@
                 android:text="Name" />
 
             <EditText
-                android:id="@+id/nameEdt"
+                android:id="@+id/name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -86,7 +86,7 @@
                 android:text="Address" />
 
             <EditText
-                android:id="@+id/addressEdt"
+                android:id="@+id/address"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -117,7 +117,7 @@
                 android:text="Phone" />
 
             <EditText
-                android:id="@+id/phoneEdt"
+                android:id="@+id/phone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

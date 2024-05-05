@@ -5,5 +5,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sign_up_text">Have an account ? <font color="FF4B4B"><b>Sign In</b></font></string>
+    <!-- Trong file res/values/strings.xml -->
+    <string name="default_web_client_id">838442733090-dt9ukbvlcihdqncs56roru2uv7bd1fi0.apps.googleusercontent.com</string>
+
 
 </resources>

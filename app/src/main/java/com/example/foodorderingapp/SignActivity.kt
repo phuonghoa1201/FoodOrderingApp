@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.foodorderingapp.databinding.ActivitySignBinding
 import com.example.foodorderingapp.model.UserModel
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -21,6 +22,7 @@ class SignActivity : AppCompatActivity() {
     private lateinit var username: String
     private lateinit var auth: FirebaseAuth
     private lateinit var database: DatabaseReference
+    private lateinit var googleSignInClient: GoogleSignInClient
 
     private val binding: ActivitySignBinding by lazy {
         ActivitySignBinding.inflate(layoutInflater)
@@ -35,6 +37,8 @@ class SignActivity : AppCompatActivity() {
 
         // Khởi tạo Firebase Database
         database = Firebase.database.reference
+//        intialize fỈebase DataBASE
+
 
         // Sau nut dang nhap dang ky bo tam den frame ChooseLocation
         binding.signupbutton.setOnClickListener {
@@ -42,7 +46,7 @@ class SignActivity : AppCompatActivity() {
             email = binding.email.text.toString().trim()
             password = binding.password.text.toString().trim()
 
-            if (username.isBlank() || email.isBlank() || password.isBlank()) {
+            if (username.isBlank() || email.isEmpty() || password.isBlank()) {
                 Toast.makeText(this, "Please fill all details", Toast.LENGTH_SHORT).show()
             } else {
                 createAccount(email, password)
