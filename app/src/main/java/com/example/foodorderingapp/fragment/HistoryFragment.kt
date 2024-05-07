@@ -40,7 +40,9 @@ class HistoryFragment : Fragment() {
         binding.BuyAgainRecyclerView.adapter = buyAgainAdapter
         binding.BuyAgainRecyclerView.layoutManager = LinearLayoutManager(requireContext())
     }
-    companion object
+    companion object{
+        
+    }
 
 
 }

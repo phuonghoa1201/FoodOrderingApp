@@ -105,7 +105,6 @@ class CartFragment : Fragment() {
         val foodIngredient = mutableListOf<String>()
 //        get items quantities
         val foodQuantities = cartAdapter.getUpdatedItemsQuantities()
-
         orderIdReference.addListenerForSingleValueEvent(object: ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
                 for (foodSnapshot in snapshot.children) {
